@@ -3,44 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Космический мир</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <style>
-        body {
-            background: #000;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-        }
-        .planet-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .planet-item img {
-            width: 100%;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-        }
-        .planet-item p {
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Space World</title>
 </head>
 <body>
-    <header>
-        <h1>Космический мир</h1>
-        <p>Планеты, созданные пользователями</p>
-    </header>
-
-    <section class="planet-grid">
-        {% for planet in planets %}
-            <div class="planet-item">
-                <img src="{{ url_for('static', filename='planets/' + planet.planet_data) }}" alt="Планета">
-                <p>Планета #{{ planet.id }}</p>
-            </div>
-        {% endfor %}
-    </section>
+    <h1>Космический мир</h1>
+    {% for planet in planets %}
+        <div>
+            <img src="{{ planet.planet_data }}" alt="Planet">
+            <p>{{ planet.username }}: {{ planet.created_at }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
