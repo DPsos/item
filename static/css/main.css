@@ -1,0 +1,80 @@
+/* Основные стили */
+body {
+    background: #000; /* Черный фон */
+    color: #fff; /* Белый текст */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовок */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #1a1a1a, #000); /* Градиентный фон */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+    color: #aaa;
+}
+
+/* Сетка планет */
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Адаптивная сетка */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Элемент планеты */
+.planet-item {
+    text-align: center;
+    padding: 10px;
+    background: #1a1a1a; /* Темный фон для каждой планеты */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet-item:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Увеличенная тень */
+}
+
+.planet-item img {
+    width: 100%;
+    border-radius: 50%; /* Круглые изображения */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Свечение */
+}
+
+.planet-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .planet-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Меньшие колонки на мобильных */
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
